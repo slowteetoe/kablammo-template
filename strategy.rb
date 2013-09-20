@@ -19,11 +19,8 @@
 
 require './hybrid-strategy'
 
+extend HybridStrategy
+
 on_turn do
-  x = rand(0..10)
-  if x < 5
-  	return act_like_a_robot
-  else
-    return move_north!
-  end
+	move_north!
 end
