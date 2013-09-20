@@ -21,6 +21,7 @@ module HybridStrategy
 
   def act
     enemy = opponents.first
+    return hunt unless enemy
     if enemy
     	return aim_at! enemy unless aiming_at? enemy
     	if my.ammo > 0
@@ -28,11 +29,10 @@ module HybridStrategy
     	else
     		return rest
     	end
-    	move_towards! enemy
+    	return move_towards! enemy
     end
     if my.ammo == 0
     	return rest
     end
-    return hunt
   end
 end
