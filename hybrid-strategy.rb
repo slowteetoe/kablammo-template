@@ -1,11 +1,7 @@
 module HybridStrategy
   def hunt
     x, y = robot.x, robot.y
-    return first_possible_move 'nesw' if x == 0
-    return first_possible_move 'eswn' if y == @battle.board.height - 1
-    return first_possible_move 'swne' if x == @battle.board.width - 1
-    return first_possible_move 'wnes' if y == 0
-    first_possible_move 'wsen'
+    first_possible_move "nsew"
   end
 
   def fire_at!(enemy, compensate = 0)
@@ -19,7 +15,7 @@ module HybridStrategy
     fire! skew
   end
 
-  def act
+  def act_like_a_robot
     enemy = opponents.first
     return hunt unless enemy
     if enemy

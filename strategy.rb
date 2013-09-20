@@ -20,5 +20,5 @@
 require './hybrid-strategy'
 
 on_turn do
-  act
+  act_like_a_robot
 end
