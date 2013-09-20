@@ -22,5 +22,5 @@ require './hybrid-strategy'
 extend HybridStrategy
 
 on_turn do
-	move_north!
+	act_like_a_robot!
 end
