@@ -29,7 +29,7 @@ module HybridStrategy
     if enemy
     	return aim_at! enemy unless aiming_at? enemy
     	if my.ammo > 0
-    		return fire_at! enemy, 0.75 if can_fire_at? enemy
+    		return fire_at! enemy, 0.9 if can_fire_at? enemy
     	else
     		return rest
     	end
