@@ -1,11 +1,15 @@
 module HybridStrategy
   def hunt
     x, y = robot.x, robot.y
-    return first_possible_move 'nesw' if x == 0
-    return first_possible_move 'eswn' if y == @battle.board.height - 1
-    return first_possible_move 'swne' if x == @battle.board.width - 1
-    return first_possible_move 'wnes' if y == 0
-    first_possible_move 'wsen'
+    return first_possible_move random_choices_from("nse") if x == 0
+    return first_possible_move random_choices_from('esw') if y == @battle.board.height - 1
+    return first_possible_move random_choices_from('ewn') if x == @battle.board.width - 1
+    return first_possible_move random_choices_from('nws') if y == 0
+    first_possible_move 'nsew'
+  end
+
+  def random_choices_from(dirs)
+    dirs.split("").shuffle.join("")
   end
 
   def fire_at!(enemy, compensate = 0)
