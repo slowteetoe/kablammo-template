@@ -1,7 +1,7 @@
 module HybridStrategy
   def hunt
     x, y = robot.x, robot.y
-    first_possible_move "nsew"
+    move_north!
   end
 
   def fire_at!(enemy, compensate = 0)
