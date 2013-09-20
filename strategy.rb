@@ -17,6 +17,8 @@
 # move_east! -- move east
 # move_west! -- move west
 
+require './hybrid-strategy'
+
 on_turn do
-  fire!
+  act
 end
