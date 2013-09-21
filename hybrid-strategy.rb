@@ -16,10 +16,10 @@ module HybridStrategy
     direction = robot.direction_to(enemy).round
     skew = direction - robot.rotation
     distance = robot.distance_to(enemy)
-    max_distance = Math.sqrt(board.height * board.height + board.width * board.width)
-    compensation = ( 10 - ( (10 - 3) * (distance / max_distance) ) ).round
-    compensation *= -1 if rand(0..1) == 0
-    skew += compensation if compensate > rand
+    # max_distance = Math.sqrt(board.height * board.height + board.width * board.width)
+    # compensation = ( 10 - ( (10 - 3) * (distance / max_distance) ) ).round
+    # compensation *= -1 if rand(0..1) == 0
+    # skew += compensation if compensate > rand
     fire! skew
   end
 
